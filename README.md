@@ -1,4 +1,5 @@
 Getting Started
+
 Note: Nodemon should be installed globally.
 Open a terminal instance for every service and one for the proxy.
 Run 'npm install' for every service and the proxy.
