@@ -1,0 +1,13 @@
+#Gallery {
+    display: block;
+  }
+  
+  #ProductInfo {
+    margin-left: 5px;
+    display: inline-block;
+  }
+  
+  #Overview {
+    margin: 10%;
+    display: block;
+  }

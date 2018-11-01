@@ -1,0 +1,29 @@
+{
+  "name": "overview_proxy",
+  "version": "1.0.0",
+  "description": "My first Proxy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeltaDrop/OverviewOfAProductProxy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeltaDrop/OverviewOfAProductProxy/issues"
+  },
+  "homepage": "https://github.com/DeltaDrop/OverviewOfAProductProxy#readme",
+  "devDependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
