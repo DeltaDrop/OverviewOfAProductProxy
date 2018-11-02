@@ -23,3 +23,44 @@ app.get('/buy/:prod_name/overview', (req, res) => {
       console.error('there is an error');
     })
 })
+
+app.get('/api/:prod_name', (req, res) => {
+  const url = `http://localhost:3001${req.url}`
+  axios.get(url)
+    .then(({data}) => {
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+}) 
+
+app.get('/api/categories/:prod_name', (req, res) => {
+  const url = `http://localhost:3001${req.url}`
+  axios.get(url)
+    .then(({data}) => {
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+}) 
+
+app.get('/buy/:productname/reviews', (req, res) => {
+  const url = `http://localhost:3002${req.url}`
+  axios.get(url)
+    .then(({data}) => {
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+}) 
+
+app.get('/buy/*', (req, res) => {
+  console.log('hello!');
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+})
