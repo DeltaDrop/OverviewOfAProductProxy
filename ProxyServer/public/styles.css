@@ -7,17 +7,17 @@
     display: inline-block;
   }
   
-  #Overview {
+  /* #Overview {
     margin: 10%;
     display: block;
-  }
+  } */
 
-/* .tab {
+.tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
 }
-.tab button {
+/* .tab button {
   background-color: inherit;
   float: left;
   border: none;

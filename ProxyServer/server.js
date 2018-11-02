@@ -1,10 +1,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const parser = require('body-parser');
 const port = process.env.PORT || 8080;
 const axios = require('axios');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(parser.json());
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
@@ -25,6 +27,7 @@ app.get('/buy/:prod_name/overview', (req, res) => {
 })
 
 app.get('/api/:prod_name', (req, res) => {
+  console.log('api prod ', req.url);
   const url = `http://localhost:3001${req.url}`
   axios.get(url)
     .then(({data}) => {
@@ -47,6 +50,22 @@ app.get('/api/categories/:prod_name', (req, res) => {
       console.error(err);
     })
 }) 
+
+app.post('/api/drop', (req, res) => {
+  const url = `http://localhost:3001${req.url}`
+  console.log('params: ', req.params);
+  console.log('query:', req.query);
+  console.log('body: ', req.body);
+  axios.post(url, req.body)
+    .then(({data}) => {
+      console.log(data);
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+}) 
+
 
 app.get('/buy/:productname/reviews', (req, res) => {
   const url = `http://localhost:3002${req.url}`
