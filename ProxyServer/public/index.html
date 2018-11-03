@@ -9,44 +9,44 @@
 </head>
 <body>
   <div id="gallery"></div>
-  <div id="ProductInfo"></div>
+  <!-- <div id="ProductInfo"></div> -->
   <!-- <div class="tab">
       <span class="tabinks" id="Overview" onclick="createOverview()">Overview</span>
       <span class="tablinks" id="Reviews" onclick="createReviews()">Reviews</span>
   </div>
   <hr/> -->
-  <div id="Overview"></div>
-  <div id="Reviews"></div>
+  <!-- <div id="Overview"></div>
+  <div id="Reviews"></div> -->
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script src="http://ec2-54-209-75-211.compute-1.amazonaws.com/gallery.bundle.js"></script>
-  <script src="http://localhost:3001/info.bundle.js"></script>
-  <script src="http://localhost:3003/bundle.js"></script>
+  <!-- <script src="http://localhost:3001/info.bundle.js"></script>
+  <script src="http://localhost:3003/bundle.js"></script> -->
   <!-- <script src="54.213.205.51/bundle.js"></script> -->
-  <script src="http://localhost:3002/bundle.js"></script>
+  <!-- <script src="http://localhost:3002/bundle.js"></script> -->
   <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
   <script>
     // ReactDOM.render(
     //   React.createElement(Gallery),
     //   document.getElementById('gallery')
     // );
-    ReactDOM.render(
-      React.createElement(Info),
-      document.getElementById('ProductInfo')
-    );
-    // function createOverview() {
-    //   //var i, tabContent, tabLinks;
-      ReactDOM.render(
-        React.createElement(Overview),
-        document.getElementById('Overview')
-      );
-    // }
-    // function createReviews() {
+    // ReactDOM.render(
+    //   React.createElement(Info),
+    //   document.getElementById('ProductInfo')
+    // );
+    // // function createOverview() {
+    // //   //var i, tabContent, tabLinks;
+    //   ReactDOM.render(
+    //     React.createElement(Overview),
+    //     document.getElementById('Overview')
+    //   );
+    // // }
+    // // function createReviews() {
 
-      ReactDOM.render(
-        React.createElement(Reviews),
-        document.getElementById('Reviews')
-      );
+    //   ReactDOM.render(
+    //     React.createElement(Reviews),
+    //     document.getElementById('Reviews')
+    //   );
     // }
   </script>
 </body>
