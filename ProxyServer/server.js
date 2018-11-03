@@ -30,7 +30,7 @@ app.get('/buy/:prod_name/overview', (req, res) => {
 
 app.get('/api/:prod_name', (req, res) => {
   console.log('api prod ', req.url);
-  const url = `http://localhost:3001${req.url}`
+  const url = `http://18.224.199.183${req.url}`
   axios.get(url)
     .then(({data}) => {
       console.log(data);
@@ -42,7 +42,7 @@ app.get('/api/:prod_name', (req, res) => {
 }) 
 
 app.get('/api/categories/:prod_name', (req, res) => {
-  const url = `http://localhost:3001${req.url}`
+  const url = `http://18.224.199.183${req.url}`
   axios.get(url)
     .then(({data}) => {
       console.log(data);
@@ -54,7 +54,7 @@ app.get('/api/categories/:prod_name', (req, res) => {
 }) 
 
 app.post('/api/drop', (req, res) => {
-  const url = `http://localhost:3001${req.url}`
+  const url = `http://18.224.199.183${req.url}`
   console.log('params: ', req.params);
   console.log('query:', req.query);
   console.log('body: ', req.body);
@@ -85,11 +85,12 @@ app.get('/productImages/:product', (req, res) => {
   let product = req.url.split('/')[2];
   console.log('product galler data')
   console.log(product);
-  axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/keyboard')
+  axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/'+ product)
   .then((response) => {
     console.log(response.data)
     res.send(response.data)
   }).catch(err => {
+    console.log(err);
     res.status(500).send;
   })
  })
