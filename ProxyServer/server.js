@@ -16,7 +16,7 @@ app.listen(port, () => {
 
 
 app.get('/buy/:prod_name/overview', (req, res) => {
-  const url = `http://localhost:3003${req.url}`
+  const url = `http://ec2-54-213-205-51.us-west-2.compute.amazonaws.com${req.url}`
   console.log(url);
    axios.get(url)
     .then(({data}) => {
@@ -33,7 +33,6 @@ app.get('/api/:prod_name', (req, res) => {
   const url = `http://18.224.199.183${req.url}`
   axios.get(url)
     .then(({data}) => {
-      console.log(data);
       res.send(data);
     })
     .catch((err) => {
@@ -45,7 +44,6 @@ app.get('/api/categories/:prod_name', (req, res) => {
   const url = `http://18.224.199.183${req.url}`
   axios.get(url)
     .then(({data}) => {
-      console.log(data);
       res.send(data);
     })
     .catch((err) => {
@@ -60,7 +58,6 @@ app.post('/api/drop', (req, res) => {
   console.log('body: ', req.body);
   axios.post(url, req.body)
     .then(({data}) => {
-      console.log(data);
       res.send(data);
     })
     .catch((err) => {
@@ -70,10 +67,9 @@ app.post('/api/drop', (req, res) => {
 
 
 app.get('/buy/:productname/reviews', (req, res) => {
-  const url = `http://localhost:3002${req.url}`
+  const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
   axios.get(url)
     .then(({data}) => {
-      console.log(data);
       res.send(data);
     })
     .catch((err) => {
@@ -83,19 +79,14 @@ app.get('/buy/:productname/reviews', (req, res) => {
 
 app.get('/productImages/:product', (req, res) => {
   let product = req.url.split('/')[2];
-  console.log('product galler data')
-  console.log(product);
   axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/'+ product)
   .then((response) => {
-    console.log(response.data)
     res.send(response.data)
   }).catch(err => {
-    console.log(err);
     res.status(500).send;
   })
  })
 
 app.get('/buy/*', (req, res) => {
-  console.log('hello!');
   res.sendFile(path.join(__dirname, 'public/index.html'))
 })
