@@ -16,6 +16,7 @@ app.listen(port, () => {
 
 
 app.get('/buy/:prod_name/overview', (req, res) => {
+  console.log(req.url);
   const url = `http://ec2-54-213-205-51.us-west-2.compute.amazonaws.com${req.url}`
   console.log(url);
    axios.get(url)
@@ -66,7 +67,7 @@ app.post('/api/drop', (req, res) => {
 }) 
 
 
-app.get('/buy/:productname/reviews', (req, res) => {
+app.get('/api/:productname/reviews', (req, res) => {
   const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
   axios.get(url)
     .then(({data}) => {
