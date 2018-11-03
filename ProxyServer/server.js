@@ -79,6 +79,16 @@ app.get('/buy/:productname/reviews', (req, res) => {
     })
 }) 
 
+app.get('/productImages/:product', (req, res) => {
+  let product = req.url.split('/')[2];
+  axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/' + product)
+  .then((response) => {
+    res.send(response.data)
+  }).catch(err => {
+    res.status(500).send;
+  })
+ })
+
 app.get('/buy/*', (req, res) => {
   console.log('hello!');
   res.sendFile(path.join(__dirname, 'public/index.html'))
