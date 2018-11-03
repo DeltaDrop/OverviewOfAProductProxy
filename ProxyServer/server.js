@@ -83,7 +83,7 @@ app.get('/productImages/:product', (req, res) => {
   let product = req.url.split('/')[2];
   console.log('product galler data')
   console.log(product);
-  axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/' + product)
+  axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/keyboard')
   .then((response) => {
     console.log(response.data)
     res.send(response.data)
