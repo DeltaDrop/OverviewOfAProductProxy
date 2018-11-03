@@ -17,7 +17,7 @@ app.listen(port, () => {
 
 app.get('/buy/:prod_name/overview', (req, res) => {
   const url = `http://ec2-54-213-205-51.us-west-2.compute.amazonaws.com${req.url}`
-  console.log(url);
+  // console.log(url);
    axios.get(url)
     .then(({data}) => {
       res.send(data);
@@ -29,7 +29,7 @@ app.get('/buy/:prod_name/overview', (req, res) => {
 })
 
 app.get('/api/:prod_name', (req, res) => {
-  console.log('api prod ', req.url);
+  // console.log('api prod ', req.url);
   const url = `http://18.224.199.183${req.url}`
   axios.get(url)
     .then(({data}) => {
@@ -53,9 +53,9 @@ app.get('/api/categories/:prod_name', (req, res) => {
 
 app.post('/api/drop', (req, res) => {
   const url = `http://18.224.199.183${req.url}`
-  console.log('params: ', req.params);
-  console.log('query:', req.query);
-  console.log('body: ', req.body);
+  // console.log('params: ', req.params);
+  // console.log('query:', req.query);
+  // console.log('body: ', req.body);
   axios.post(url, req.body)
     .then(({data}) => {
       res.send(data);
@@ -66,10 +66,12 @@ app.post('/api/drop', (req, res) => {
 }) 
 
 
-app.get('/buy/:productname/reviews', (req, res) => {
+app.get('/api/:productname/reviews', (req, res) => {
+  console.log(req.url)
   const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
   axios.get(url)
     .then(({data}) => {
+      console.log(data)
       res.send(data);
     })
     .catch((err) => {
