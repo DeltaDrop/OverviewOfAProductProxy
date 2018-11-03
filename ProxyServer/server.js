@@ -78,6 +78,53 @@ app.get('/api/:productname/reviews', (req, res) => {
     })
 }) 
 
+app.post('/api/:productname/reviews/sort', (req, res) => {
+  const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
+  axios.post(url, req.body)
+    .then(({data}) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
+app.post('/api/:productname/reviews/replies', (req, res) => {
+  const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
+  axios.post(url, req.body)
+    .then(({data}) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
+
+app.put('/api/:productname/reviews', (req, res) => {
+  const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
+  axios.put(url, req.body)
+    .then(({data}) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
+app.post('/api/:productName/reviews/search', (req, res) => {
+  // var name = req.body.name
+  // var term = req.body.term.toLowerCase()
+  const url = `http://ec2-54-89-153-231.compute-1.amazonaws.com${req.url}`
+  axios.post(url, req.body)
+    .then(({data}) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+})
+
 app.get('/productImages/:product', (req, res) => {
   let product = req.url.split('/')[2];
   axios.get('http://ec2-54-209-75-211.compute-1.amazonaws.com/productImages/'+ product)
