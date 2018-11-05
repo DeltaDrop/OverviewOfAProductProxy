@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/DeltaDrop/dd-ReviewsOfAProduct
+  - https://github.com/DeltaDrop/dd-Gallery
+  - https://github.com/DeltaDrop/dd-ProductInfo
+  - https://github.com/DeltaDrop/dd-OverviewOfAProduct
 
 ## Table of Contents
 
